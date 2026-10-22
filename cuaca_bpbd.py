@@ -58,14 +58,16 @@ if "Lebat" in cuaca:
 if "Petir" in cuaca:
     status_bpbd = "AWAS"
 
+from datetime import datetime
+
 sheet.append_row([
-    lokasi["desa"],
+    datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     lokasi["kecamatan"],
+    lokasi["desa"],
     lokasi["adm4"],
     cuaca,
     suhu,
     kelembaban,
     status_bpbd
 ])
-
 print("Data BPBD berhasil ditulis")
